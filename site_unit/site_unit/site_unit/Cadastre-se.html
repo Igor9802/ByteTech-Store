@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cadastro.css">
+    <title>Login</title>
+    <style>
+        .signup-link {
+            color: #fff; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1 style="color: #77ffc0;"> Faça Login<br>E entre para o nosso time</h1>
+            <img src="Login.svg" alt="Login animação" class="left-login-img">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Login</h1>
+                <div class="textfield">
+                    <label for="usuario">Nome de Usuário</label>
+                    <input type="text" name="usuario" placeholder="Usuário">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Senha">
+                </div>
+                <button class="btn-login" onclick="redirecionarParaBoasVindas()">Login</button>
+                <p>Ainda não tem uma conta? <a class="signup-link" href="login1.html">Cadastre-se aqui</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirecionarParaBoasVindas() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>

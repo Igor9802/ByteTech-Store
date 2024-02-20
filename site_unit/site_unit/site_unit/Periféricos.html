@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteTech Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .thumbnail-card {
+            max-width: 80px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+
+        #main-image {
+            max-width: 60%;
+        }
+
+
+        #thumbnail-container {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+
+
+        .product-info {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            text-align: right;
+        }
+
+        .price {
+            font-size: 20px;
+            color: green;
+        }
+
+        .buy-button {
+            background-color: #008000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .cart-button {
+            background-color: #3333cc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+        .in-stock {
+            color: green;
+        }
+
+
+        .product-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        .product-description {
+            font-size: 14px;
+        }
+
+
+        .product-description-card {
+            margin-top: 20px;
+        }
+
+
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page p-3">
+        <div class="page-body">
+            <div class="col-md-12 mb-3">
+                <a href="index.html" class="text-muted fw-bold">Voltar pra loja</a>
+            </div>
+            <div class="row">
+                <div class="col-md-8 row">
+                    <div class="col-auto">
+                        <div id="">
+                            <div class="card thumbnail-card" onclick="changeImage(this)">
+                                <img src="https://images.kabum.com.br/produtos/fotos/114588/teclado-mecanico-gamer-husky-blizzard-rgb-switch-gateron-red-abnt2-rosa-tc-hbl-ro_1619467419_gg.jpg"
+                                    alt="Imagem Miniatura 1">
+                            </div>
+                            <div class="card thumbnail-card" onclick="changeImage(this)">
+                                <img src="https://images.kabum.com.br/produtos/fotos/114588/teclado-mecanico-gamer-husky-blizzard-rgb-switch-gateron-red-abnt2-rosa-tc-hbl-ro_1619467415_gg.jpg"
+                                    alt="Imagem Miniatura 2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="product-name">Teclado Mecânico Gamer Husky Gaming Blizzard, Rosa, 60%</h2>
+                                <div class="text-center">
+                                    <img class="w-100" id="main-image"
+                                        src="https://images.kabum.com.br/produtos/fotos/114588/teclado-mecanico-gamer-husky-blizzard-rgb-switch-gateron-red-abnt2-rosa-tc-hbl-ro_1619467419_gg.jpg"
+                                        alt="Produto 1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p>Vendido e entregue por: <strong>ByteTech!</strong><br> <span class="in-stock">Em estoque</span></p>
+                    <div class="price">
+                        <span class="text-muted"><del>R$  352,93</del></span>
+                        <br>
+                        <h2 class="mb-1 fw-bold">R$ 249,99</h2>
+                        <p class="fs-6 fw-bold mb-1 text-muted">À vista no PIX com até 10% OFF</p>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-success">COMPRAR</button>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary" id="addToCartBtn"
+                            onclick="addToCart('Teclado Mecânico Gamer Husky', 2400)">Adicionar ao Carrinho</button>
+                    </div>
+    
+                </div>
+            </div>
+
+
+            <div class="card product-description-card">
+                <div class="card-body">
+                    <h4><span class="bold-text">Descrição do Produto</span></h4>
+                    <p>O Teclado Mecânico Gamer Husky Gaming Blizzard, 60%, RGB, Switch Gateron Red, ABNT2, Rosa é perfeito para quem precisa de performance e precisão. Prepare-se para muitas horas de batalha intensa em seus gameplays!</p>
+                    <p><span class="bold-text">Switches com feedback audível e tátil</span></p>
+                    <p>Switch Gateron Red contam com um feedback audível e tátil. É versátil e aprimorado em relação a outros switches. Ele traz a tecnologia dos switches mecânicos e é um ícone para os jogos e longos períodos de digitação. Tem um clique único, suas teclas possuem um som “clicky” característico.</p>
+                    <p><span class="bold-text">Teclado Mecânico com Anti-Ghosting</span></p>
+                    <p>Cada tecla tem um conjunto de interruptor e mola próprio. Com Teclas 100% Anti-Ghosting garante o funcionamento de comandos mesmo quando várias teclas são acionadas simultaneamente.</p>
+                    <p><span class="bold-text">Praticidade e Durabilidade</span></p>
+                    <p>Cabo em nylon com USB C destacável e switches removíveis e a prova de poeira. 50 Milhões de toques por tecla sem perda de qualidade e agilidade ao serem acionadas.</p>
+                    <p><span class="bold-text">Backlight RGB</span></p>
+                    <p>É possível configurar o RGB através do software do próprio teclado. São 12 opções de iluminação.</p>
+                    <p><span class="bold-text">Formato 60%</span></p>
+                    <p>Ideal para setups minimalistas. Design compacto e toda funcionalidade dos teclados comuns. O teclado conta também com Layout ABNT2 para facilitar seu dia-a-dia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card d-none">
+        <div class="card-body">
+            
+            <table class="table mt-4">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                   
+                </tbody>
+            </table>
+    
+            <p class="text-end">Total: <span id="cart-total">R$ 0.00</span></p>
+        </div>
+     </div>
+    <script>
+        function changeImage(element) {
+            var mainImage = document.getElementById("main-image");
+            var thumbnailImages = document.querySelectorAll(".thumbnail-card img");
+
+           
+            var index = Array.from(thumbnailImages).indexOf(element.querySelector('img'));
+
+            if (mainImage && thumbnailImages.length > index) {
+                mainImage.src = thumbnailImages[index].src;
+            }
+        }
+    </script>
+    <script src="assets/js/carrinho.js"></script>
+</body>
+
+</html>

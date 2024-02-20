@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteTech Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .thumbnail-card {
+            max-width: 80px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+
+        #main-image {
+            max-width: 60%;
+        }
+
+
+        #thumbnail-container {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+
+
+        .product-info {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            text-align: right;
+        }
+
+        .price {
+            font-size: 20px;
+            color: green;
+        }
+
+        .buy-button {
+            background-color: #008000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .cart-button {
+            background-color: #3333cc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+        .in-stock {
+            color: green;
+        }
+
+
+        .product-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        .product-description {
+            font-size: 14px;
+        }
+
+
+        .product-description-card {
+            margin-top: 20px;
+        }
+
+
+        .bold-text {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page p-3">
+        <div class="page-body">
+            <div class="col-md-12 mb-3">
+                <a href="index.html" class="text-muted fw-bold">Voltar pra loja</a>
+            </div>
+            <div class="row">
+                <div class="col-md-8 row">
+                    <div class="col-auto">
+                        <div id="">
+
+                        <div class="card thumbnail-card" onclick="changeImage(this)">
+                            <img src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/347931/Smartphone-Samsung-Galaxy-S20-Fe-5g-128GB-6GB-RAM-C-mera-Tripla-12MP-12MP-8MP-Tela-Infinita-De-6-5-Azul-Marinho_1698242299_gg.jpg"
+                                alt="Imagem Miniatura 1">
+                        </div>
+                        <div class="card thumbnail-card" onclick="changeImage(this)">
+                            <img src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/347931/Smartphone-Samsung-Galaxy-S20-Fe-5g-128GB-6GB-RAM-C-mera-Tripla-12MP-12MP-8MP-Tela-Infinita-De-6-5-Azul-Marinho_1698242310_gg.jpg"
+                                alt="Imagem Miniatura 2">
+                        </div>
+                        <div class="card thumbnail-card" onclick="changeImage(this)">
+                            <img src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/347931/Smartphone-Samsung-Galaxy-S20-Fe-5g-128GB-6GB-RAM-C-mera-Tripla-12MP-12MP-8MP-Tela-Infinita-De-6-5-Azul-Marinho_1698242340_gg.jpg"
+                                alt="Imagem Miniatura 3">
+                    </div>
+                    <div class="card thumbnail-card" onclick="changeImage(this)">
+                        <img src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/347931/Smartphone-Samsung-Galaxy-S20-Fe-5g-128GB-6GB-RAM-C-mera-Tripla-12MP-12MP-8MP-Tela-Infinita-De-6-5-Azul-Marinho_1698242320_gg.jpg"
+                            alt="Imagem Miniatura 4">
+                </div>
+                </div>
+                </div>
+                
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="product-name">Smartphone Samsung Galaxy S20 FE, 5G,</h2>
+                                <div class="text-center">
+                                    <img class="w-100" id="main-image"
+                                        src="https://images.kabum.com.br/produtos/fotos/sync_mirakl/347931/Smartphone-Samsung-Galaxy-S20-Fe-5g-128GB-6GB-RAM-C-mera-Tripla-12MP-12MP-8MP-Tela-Infinita-De-6-5-Azul-Marinho_1698242299_gg.jpg"
+                                        alt="Produto 1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p>Vendido e entregue por: <strong>ByteTech!</strong><br> <span class="in-stock">Em estoque</span></p>
+                    <div class="price">
+                        <span class="text-muted"><del>R$  1.989,90</del></span>
+                        <br>
+                        <h2 class="mb-1 fw-bold">R$1.849,90</h2>
+                        <p class="fs-6 fw-bold mb-1 text-muted">À vista no PIX com até 10% OFF</p>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-success">COMPRAR</button>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary" id="addToCartBtn"
+                            onclick="addToCart('Smartphone Samsung Galaxy S20 FE, 5G', 2400)">Adicionar ao Carrinho</button>
+                    </div>
+    
+                </div>
+            </div>
+
+
+            <div class="card product-description-card">
+                <div class="card-body">
+                    <h4><span class="bold-text">Descrição do Produto</span></h4>
+                    <p><span class="bold-text">Smartphone Samsung Galaxy S20 FE 5G 128GB</span></p>
+                    <p>Este é o smartphone para pessoas que querem tudo. Ouvimos vocês, os fãs, e agora não precisam mais ficar em dúvida sobre o que escolher. Este é o smartphone feito sob medida para fãs de todos os tipos. Então, se você é fã de fotografia, jogos ou adora deixar seu feed repleto de tudo que o inspira, nós reunimos a combinação definitiva de inovação S20. Este é o smartphone que oferece o que você deseja, para você fazer mais daquilo que ama.</p>
+                    <p><span class="bold-text">A Câmera de Lente Tripla de Nível Profissional</span></p>
+                    <p>A câmera de lente tripla de nível profissional permite que você tire aquela foto profissional digna de #semfiltro com facilidade. Enquadre a cena com a câmera wide e, a seguir, mostre ainda mais com a câmera ultra-wide, ou aumente o zoom com o zoom óptico de 3x na câmera teleobjetiva.</p>
+                    <p><span class="bold-text">Conectividade</span></p>
+                    <p>O LTE de até 1,6 Gbps oferece velocidades de dados poderosas, enquanto o Wi-Fi 6 conecta você com segurança e baixa latência, mesmo em um local lotado. Portanto, quer você esteja conectado a LTE ou Wi-Fi, pode jogar em tempo real com pouco atraso.</p>
+                    <p><span class="bold-text">Bateria Inteligente o Dia Todo para que Você possa Jogar por Horas</span></p>
+                    <p>Viva sua vida sem se preocupar com onde você pode conectar seu smartphone. A bateria de 4500mAh (padrão) dá ao seu smartphone a energia necessária para durar mais que o seu dia, e é inteligente o suficiente para economizar energia para quando você realmente precisar.</p>
+                    <p><span class="bold-text">Espaço para Milhares de Fotos e Vídeos</span></p>
+                    <p>Com 128 GB integrados e a capacidade de armazenar até 1 TB (não incluso) a mais em um cartão microSD, o único limite para o que você pode armazenar é o que você pode criar e baixar.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card d-none">
+        <div class="card-body">
+            
+            <table class="table mt-4">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                  
+                </tbody>
+            </table>
+    
+            <p class="text-end">Total: <span id="cart-total">R$ 0.00</span></p>
+        </div>
+     </div>
+    <script>
+        function changeImage(element) {
+            var mainImage = document.getElementById("main-image");
+            var thumbnailImages = document.querySelectorAll(".thumbnail-card img");
+
+           
+            var index = Array.from(thumbnailImages).indexOf(element.querySelector('img'));
+
+            if (mainImage && thumbnailImages.length > index) {
+                mainImage.src = thumbnailImages[index].src;
+            }
+        }
+    </script>
+    <script src="assets/js/carrinho.js"></script>
+</body>
+
+</html>
